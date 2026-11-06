@@ -1,0 +1,94 @@
+:root {
+  --blue-50: #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #cbd5e1;
+  --danger: #dc2626;
+  --success: #15803d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: linear-gradient(135deg, var(--blue-100), var(--blue-50) 60%, #fff);
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px 32px;
+  box-shadow: 0 10px 40px rgba(37, 99, 235, 0.15);
+}
+
+h1 { margin: 0 0 6px; font-size: 1.75rem; color: var(--blue-700); }
+.subtitle { margin: 0 0 24px; color: var(--muted); font-size: 0.95rem; }
+
+.field { margin-bottom: 18px; display: flex; flex-direction: column; }
+.field label { font-size: 0.875rem; font-weight: 600; margin-bottom: 6px; }
+
+.field input {
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.field input:focus {
+  border-color: var(--blue-500);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+.field input.invalid { border-color: var(--danger); }
+.field-error { margin-top: 6px; font-size: 0.8rem; color: var(--danger); }
+
+.btn {
+  width: 100%;
+  padding: 13px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--blue-600);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.btn:hover:not(:disabled) { background: var(--blue-700); }
+.btn:active:not(:disabled) { transform: scale(0.98); }
+.btn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+.alert {
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+.alert.error { background: #fef2f2; color: var(--danger); border: 1px solid #fecaca; }
+.alert.success { background: #f0fdf4; color: var(--success); border: 1px solid #bbf7d0; }
+
+.switch { text-align: center; margin: 22px 0 0; font-size: 0.9rem; color: var(--muted); }
+.switch a { color: var(--blue-600); font-weight: 600; text-decoration: none; }
+.switch a:hover { text-decoration: underline; }
+
+@media (max-width: 480px) {
+  .card { padding: 28px 20px; border-radius: 12px; }
+  h1 { font-size: 1.5rem; }
+}
